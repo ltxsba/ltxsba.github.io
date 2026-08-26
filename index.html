@@ -3,83 +3,259 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="第一版主小说最新地址发布页，请收藏本页面以获取最新地址。">
-<title>第一版主小说_最新地址发布页</title>
+<meta name="theme-color" content="#1d2440">
+<meta name="description" content="第一版主小说最新地址发布页，请收藏本页面以便随时获取最新入口。">
+<title>第一版主小说 - 最新地址发布页</title>
 <style>
+:root{
+  --bg:#f5f7fb;
+  --card:rgba(255,255,255,.92);
+  --text:#182033;
+  --muted:#6b7280;
+  --line:#e7eaf0;
+  --primary:#5b5cf0;
+  --primary2:#7c3aed;
+  --success:#16a34a;
+  --shadow:0 18px 50px rgba(24,32,51,.08);
+  --radius:22px;
+}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 html,body{margin:0;padding:0}
-body{min-height:100vh;background:#f5f6f8;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
-.page{width:min(100% - 24px,760px);margin:0 auto;padding:clamp(16px,4vw,36px) 0 calc(30px + env(safe-area-inset-bottom))}
-.card{background:#fff;border:1px solid #e7e9ed;border-radius:18px;padding:clamp(18px,4vw,30px);box-shadow:0 10px 30px rgba(0,0,0,.05)}
-.brand{text-align:center;font-size:clamp(22px,4.5vw,30px);font-weight:800;margin:0 0 22px}
-.flag{font-size:.5em;font-weight:500;color:#888;margin-left:8px}
-.section{padding:18px 0;border-top:1px solid #eee}
-.section.first{border-top:0;padding-top:0}
-.enter{text-align:center;margin:8px 0 20px}
-.enter a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 22px;border-radius:10px;background:#222;color:#fff;text-decoration:none;font-size:16px;max-width:100%}
-h4{margin:0 0 10px;font-size:16px}
-p{margin:8px 0;line-height:1.8}
-a{color:#2867c7;text-decoration:none;overflow-wrap:anywhere;word-break:break-word}
-ul{margin:8px 0;padding-left:22px}
-li{line-height:1.85;margin:4px 0}
-.tip{color:#777;font-size:14px}
-.addr{font-size:clamp(14px,3.6vw,16px)}
-.notice{background:#f7f8fa;border-radius:12px;padding:13px 14px}
-@media(max-width:420px){.page{width:min(100% - 18px,760px)}.card{border-radius:14px;padding:17px 14px}.enter a{width:100%}ul{padding-left:20px}}
-@media(min-width:768px) and (max-width:1180px){.page{width:min(100% - 48px,800px)}}
+body{
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 10%,rgba(91,92,240,.12),transparent 32%),
+    radial-gradient(circle at 85% 0%,rgba(124,58,237,.10),transparent 30%),
+    var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+}
+a{color:inherit}
+.shell{
+  width:min(100% - 28px,820px);
+  margin:0 auto;
+  padding:clamp(18px,4vw,42px) 0 calc(34px + env(safe-area-inset-bottom));
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:30px;
+  padding:clamp(26px,5vw,44px);
+  background:linear-gradient(135deg,#1d2440 0%,#343a63 55%,#5b5cf0 100%);
+  color:#fff;
+  box-shadow:0 24px 70px rgba(44,53,94,.24);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:999px;filter:blur(2px);pointer-events:none
+}
+.hero:before{width:220px;height:220px;right:-70px;top:-90px;background:rgba(255,255,255,.10)}
+.hero:after{width:130px;height:130px;left:-40px;bottom:-55px;background:rgba(124,58,237,.28)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative;z-index:1}
+.brand{font-weight:800;font-size:clamp(24px,5vw,34px);letter-spacing:.2px}
+.badge{font-size:12px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);white-space:nowrap}
+.subtitle{position:relative;z-index:1;margin:12px 0 0;color:rgba(255,255,255,.78);font-size:clamp(14px,3.5vw,16px);line-height:1.75}
+.cta-row{position:relative;z-index:1;margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.cta{
+  border:0;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 22px;border-radius:14px;
+  background:#fff;color:#222943;font-size:16px;font-weight:750;
+  box-shadow:0 10px 25px rgba(0,0,0,.12)
+}
+.cta.secondary{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.card{
+  background:var(--card);
+  border:1px solid rgba(231,234,240,.92);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(18px,4vw,24px);
+  backdrop-filter:blur(12px);
+}
+.card.full{grid-column:1/-1}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.section-title{font-size:17px;font-weight:800}
+.section-note{font-size:12px;color:var(--muted)}
+.route-list{display:grid;gap:10px}
+.route{
+  display:flex;align-items:center;gap:12px;
+  min-height:62px;padding:12px 14px;border:1px solid var(--line);
+  border-radius:16px;text-decoration:none;background:#fff;
+  transition:.18s ease
+}
+.route:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(20,30,60,.07);border-color:#d8dcff}
+.route-no{
+  flex:0 0 36px;height:36px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  background:#f0f1ff;color:var(--primary);font-weight:800;font-size:13px
+}
+.route-main{min-width:0;flex:1}
+.route-label{font-size:12px;color:var(--muted);margin-bottom:2px}
+.route-domain{font-size:15px;font-weight:750;overflow-wrap:anywhere}
+.route-arrow{font-size:20px;color:#a4a9b8}
+.status{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;color:var(--success);background:#eefbf2;
+  padding:6px 9px;border-radius:999px;white-space:nowrap
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 0 4px rgba(22,163,74,.10)}
+.info-row{display:flex;gap:12px;align-items:flex-start}
+.icon{
+  flex:0 0 42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  background:#f2f3ff;font-size:20px
+}
+.info-body{min-width:0;flex:1}
+.info-title{font-weight:800;margin-bottom:5px}
+.info-text{color:var(--muted);font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.info-link{display:inline-block;margin-top:7px;color:var(--primary);text-decoration:none;font-weight:700}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.action{
+  text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:14px;
+  padding:12px 14px;display:flex;align-items:center;gap:10px;min-height:54px
+}
+.action strong{display:block;font-size:14px}
+.action span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.tips{display:grid;gap:11px}
+.tip{
+  display:flex;gap:12px;align-items:flex-start;padding:12px 13px;border-radius:14px;background:#f8f9fb
+}
+.tip-num{
+  flex:0 0 28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  background:#eceeff;color:var(--primary);font-weight:800;font-size:12px
+}
+.tip p{margin:1px 0 0;color:#5f6677;font-size:14px;line-height:1.7}
+.footer{text-align:center;color:#9aa1af;font-size:12px;margin-top:20px}
+@media(max-width:680px){
+  .shell{width:min(100% - 18px,820px)}
+  .hero{border-radius:22px;padding:24px 18px}
+  .grid{grid-template-columns:1fr;gap:12px}
+  .card.full{grid-column:auto}
+  .actions{grid-template-columns:1fr}
+  .cta-row{display:grid;grid-template-columns:1fr}
+  .cta{width:100%}
+  .brand-row{align-items:flex-start}
+}
+@media(min-width:768px) and (max-width:1180px){
+  .shell{width:min(100% - 42px,860px)}
+}
 </style>
 </head>
 <body>
-<main class="page">
-<section class="card">
-<div class="brand">网站导航<span class="flag">发布页</span></div>
+<main class="shell">
 
-<div class="section first">
-<div class="enter"><a href="javascript:void(0)" onclick="openRandomTopEntry()">点击这里进入网站</a></div>
-<div class="addr">
-<p>最新地址➊：<a href="go/11.html" target="_blank" rel="noopener">https://bzfb.cc</a></p>
-<p>最新地址➋：<a href="go/22.html" target="_blank" rel="noopener">https://bzfby.net</a></p>
-<p>最新地址➌：<a href="go/33.html" target="_blank" rel="noopener">https://dybzfb.cc</a></p>
-</div>
-<div class="notice tip">如某个入口暂时无法访问，请切换其他入口。建议收藏本发布页。</div>
-</div>
-
-<div class="section">
-<h4>✉ 發布郵箱</h4>
-<ul><li><a href="mailto:ltxsba@gmail.com">ltxsba@gmail.com</a></li></ul>
-<p class="tip">发送任意邮件到此邮箱可自动获取最新地址。</p>
-</div>
-
-<div class="section">
-<h4>✈ 海外發布頁面</h4>
-<ul>
-<li><a href="https://11bz.net/" target="_blank" rel="noopener">https://11bz.net</a></li>
-<li><a href="bzfby.html" target="_blank" rel="noopener">您还可以点击这里把网站导航保存到本地</a></li>
-</ul>
-</div>
-
-<div class="section">
-<h4>✐ 溫馨提示</h4>
-<ul>
-<li>推薦使用 Edge 或 Chrome 瀏覽器訪問本站；iPhone / iPad 建議使用系統自帶 Safari 瀏覽器。</li>
-<li>如果您記不住本站域名，請收藏該頁地址，收藏並分享可以更方便下次訪問。</li>
-<li>電腦用戶：按鍵盤上的 Ctrl + D 進行收藏。</li>
-<li>iPhone / iPad 用戶：在 Safari 中點擊分享按鈕，然後選擇「加入個人收藏」或「加入主畫面」。</li>
-<li>Android 用戶：打開瀏覽器選單或設定，選擇「加入書籤」或「新增至主畫面」。</li>
-</ul>
-</div>
+<section class="hero">
+  <div class="brand-row">
+    <div class="brand">第一版主小说</div>
+    <div class="badge">永久发布页</div>
+  </div>
+  <div class="subtitle">最新地址 · 多入口分流 · 建议收藏本页<br>若某个入口暂时不可用，可切换其他地址访问。</div>
+  <div class="cta-row">
+    <a class="cta" href="javascript:void(0)" onclick="openRandomTopEntry()">🚀 立即进入网站</a>
+    <a class="cta secondary" href="zhaizhaidizhi.html" target="_blank" rel="noopener">💾 保存最新地址</a>
+  </div>
 </section>
+
+<section class="grid">
+
+  <article class="card full">
+    <div class="section-head">
+      <div class="section-title">当前可用地址</div>
+      <div class="status"><span class="dot"></span>可用入口</div>
+    </div>
+
+    <div class="route-list">
+      <a class="route" href="go/11.html" target="_blank" rel="noopener">
+        <div class="route-no">01</div>
+        <div class="route-main">
+          <div class="route-label">最新地址</div>
+          <div class="route-domain">bzfb.cc</div>
+        </div>
+        <div class="route-arrow">›</div>
+      </a>
+
+      <a class="route" href="go/22.html" target="_blank" rel="noopener">
+        <div class="route-no">02</div>
+        <div class="route-main">
+          <div class="route-label">最新地址</div>
+          <div class="route-domain">bzfby.net</div>
+        </div>
+        <div class="route-arrow">›</div>
+      </a>
+
+      <a class="route" href="go/33.html" target="_blank" rel="noopener">
+        <div class="route-no">03</div>
+        <div class="route-main">
+          <div class="route-label">最新地址</div>
+          <div class="route-domain">dybzfb.cc</div>
+        </div>
+        <div class="route-arrow">›</div>
+      </a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="info-row">
+      <div class="icon">✉️</div>
+      <div class="info-body">
+        <div class="info-title">发布邮箱</div>
+        <div class="info-text">发送任意邮件到此邮箱，可自动获取最新地址。</div>
+        <a class="info-link" href="mailto:ltxsba@gmail.com">ltxsba@gmail.com</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="info-row">
+      <div class="icon">🌍</div>
+      <div class="info-body">
+        <div class="info-title">海外发布页</div>
+        <div class="info-text">主发布页无法访问时，可从海外发布页获取最新地址。</div>
+        <a class="info-link" href="https://11bz.net/" target="_blank" rel="noopener">11bz.net</a>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="action" href="https://11bz.net/" target="_blank" rel="noopener">
+        <div>🌐</div><div><strong>海外发布页</strong><span>备用入口</span></div>
+      </a>
+      <a class="action" href="bzfby.html" target="_blank" rel="noopener">
+        <div>💾</div><div><strong>保存到本地</strong><span>离线保存地址</span></div>
+      </a>
+    </div>
+  </article>
+
+  <article class="card full">
+    <div class="section-head">
+      <div class="section-title">访问与收藏提示</div>
+      <div class="section-note">Chrome / Safari 推荐</div>
+    </div>
+
+    <div class="tips">
+      <div class="tip"><div class="tip-num">01</div><p>推荐使用 Google Chrome 浏览器访问；iPhone / iPad 建议使用系统自带 Safari。</p></div>
+      <div class="tip"><div class="tip-num">02</div><p>电脑用户可按 <strong>Ctrl + D</strong> 收藏本页，方便下次直接打开。</p></div>
+      <div class="tip"><div class="tip-num">03</div><p>iPhone / iPad：在 Safari 点击分享按钮，选择“加入个人收藏”或“加入主画面”。</p></div>
+      <div class="tip"><div class="tip-num">04</div><p>Android：打开浏览器菜单或设置，选择“添加书签”或“添加到主屏幕”。</p></div>
+    </div>
+  </article>
+
+</section>
+
+<div class="footer">建议收藏本发布页 · 多入口自动分流</div>
 </main>
+
 <script>
-const TOP_ENTRY_POOL=[
-"https://ltxsdz.cc/",
-"https://ltxsfb.cc/",
-"https://d1bz.net/"
+const TOP_ENTRY_POOL = [
+  "https://ltxsdz.cc/",
+  "https://ltxsfb.cc/",
+  "https://d1bz.net/"
 ];
+
 function openRandomTopEntry(){
- const target=TOP_ENTRY_POOL[Math.floor(Math.random()*TOP_ENTRY_POOL.length)];
- window.open(target,"_blank","noopener");
+  const target = TOP_ENTRY_POOL[Math.floor(Math.random() * TOP_ENTRY_POOL.length)];
+  window.open(target, "_blank", "noopener");
 }
 </script>
-</body></html>
+</body>
+</html>
