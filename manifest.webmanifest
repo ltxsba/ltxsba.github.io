@@ -1,0 +1,24 @@
+{
+  "name": "第一版主小说最新地址",
+  "short_name": "第一版主小说",
+  "description": "第一版主小说最新地址保存页",
+  "start_url": "./bzfby.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#1d2440",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

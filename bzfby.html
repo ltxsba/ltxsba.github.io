@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1d2440">
-<title>保存第一版主最新地址</title>
+<meta name="robots" content="noindex,follow">
+<title>第一版主小说最新地址保存页｜添加到桌面</title>
+<meta name="description" content="第一版主小说最新地址保存页，可保存最新地址、添加到桌面或收藏本页面。">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
 <style>
 :root{
   --bg:#f5f7fb;
-  --card:rgba(255,255,255,.92);
+  --card:rgba(255,255,255,.95);
   --text:#182033;
   --muted:#6b7280;
   --line:#e7eaf0;
@@ -16,165 +21,134 @@
   --primary2:#7c3aed;
   --success:#16a34a;
   --shadow:0 18px 50px rgba(24,32,51,.08);
-  --radius:22px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 html,body{margin:0;padding:0}
 body{
-  min-height:100vh;
-  color:var(--text);
+  min-height:100vh;color:var(--text);
   background:
-    radial-gradient(circle at 15% 10%,rgba(91,92,240,.12),transparent 32%),
-    radial-gradient(circle at 85% 0%,rgba(124,58,237,.10),transparent 30%),
+    radial-gradient(circle at 15% 8%,rgba(91,92,240,.12),transparent 31%),
+    radial-gradient(circle at 88% 2%,rgba(124,58,237,.09),transparent 30%),
     var(--bg);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
   padding-left:env(safe-area-inset-left);
-  padding-right:env(safe-area-inset-right);
+  padding-right:env(safe-area-inset-right)
 }
 a{color:inherit}
-.shell{
-  width:min(100% - 28px,820px);
-  margin:0 auto;
-  padding:clamp(18px,4vw,42px) 0 calc(34px + env(safe-area-inset-bottom));
-}
+.shell{width:min(100% - 28px,820px);margin:0 auto;padding:clamp(18px,4vw,42px) 0 calc(34px + env(safe-area-inset-bottom))}
 .hero{
-  position:relative;
-  overflow:hidden;
-  border-radius:30px;
-  padding:clamp(26px,5vw,44px);
+  position:relative;overflow:hidden;border-radius:30px;padding:clamp(26px,5vw,44px);
   background:linear-gradient(135deg,#1d2440 0%,#343a63 55%,#5b5cf0 100%);
-  color:#fff;
-  box-shadow:0 24px 70px rgba(44,53,94,.24);
+  color:#fff;box-shadow:0 24px 70px rgba(44,53,94,.24)
 }
-.hero:before,.hero:after{
-  content:"";position:absolute;border-radius:999px;filter:blur(2px);pointer-events:none
-}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
 .hero:before{width:220px;height:220px;right:-70px;top:-90px;background:rgba(255,255,255,.10)}
 .hero:after{width:130px;height:130px;left:-40px;bottom:-55px;background:rgba(124,58,237,.28)}
-.brand-row{display:flex;align-items:center;justify-content:space-between;gap:14px;position:relative;z-index:1}
-.brand{font-weight:800;font-size:clamp(24px,5vw,34px);letter-spacing:.2px}
+.brand-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;position:relative;z-index:1}
+.brand{font-weight:850;font-size:clamp(24px,5vw,35px);letter-spacing:.1px;line-height:1.25}
 .badge{font-size:12px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);white-space:nowrap}
-.subtitle{position:relative;z-index:1;margin:12px 0 0;color:rgba(255,255,255,.78);font-size:clamp(14px,3.5vw,16px);line-height:1.75}
+.subtitle{position:relative;z-index:1;margin:12px 0 0;color:rgba(255,255,255,.8);font-size:clamp(14px,3.5vw,16px);line-height:1.8}
 .cta-row{position:relative;z-index:1;margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
 .cta{
-  border:0;cursor:pointer;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  min-height:50px;padding:0 22px;border-radius:14px;
-  background:#fff;color:#222943;font-size:16px;font-weight:750;
+  border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 22px;border-radius:14px;background:#fff;color:#222943;font-size:16px;font-weight:760;
   box-shadow:0 10px 25px rgba(0,0,0,.12)
 }
 .cta.secondary{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:none}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-.card{
-  background:var(--card);
-  border:1px solid rgba(231,234,240,.92);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:clamp(18px,4vw,24px);
-  backdrop-filter:blur(12px);
-}
+.card{background:var(--card);border:1px solid rgba(231,234,240,.92);border-radius:22px;box-shadow:var(--shadow);padding:clamp(18px,4vw,24px);backdrop-filter:blur(12px)}
 .card.full{grid-column:1/-1}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
-.section-title{font-size:17px;font-weight:800}
-.section-note{font-size:12px;color:var(--muted)}
+.section-title{font-size:17px;font-weight:800;margin:0}.section-note{font-size:12px;color:var(--muted)}
 .route-list{display:grid;gap:10px}
-.route{
-  display:flex;align-items:center;gap:12px;
-  min-height:62px;padding:12px 14px;border:1px solid var(--line);
-  border-radius:16px;text-decoration:none;background:#fff;
-  transition:.18s ease
-}
+.route{display:flex;align-items:center;gap:12px;min-height:62px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff;transition:.18s ease}
 .route:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(20,30,60,.07);border-color:#d8dcff}
-.route-no{
-  flex:0 0 36px;height:36px;border-radius:11px;
-  display:flex;align-items:center;justify-content:center;
-  background:#f0f1ff;color:var(--primary);font-weight:800;font-size:13px
-}
-.route-main{min-width:0;flex:1}
-.route-label{font-size:12px;color:var(--muted);margin-bottom:2px}
-.route-domain{font-size:15px;font-weight:750;overflow-wrap:anywhere}
+.route-no{flex:0 0 36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:#f0f1ff;color:var(--primary);font-weight:800;font-size:13px}
+.route-main{min-width:0;flex:1}.route-label{font-size:12px;color:var(--muted);margin-bottom:2px}.route-domain{font-size:15px;font-weight:750;overflow-wrap:anywhere}
 .route-arrow{font-size:20px;color:#a4a9b8}
-.status{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;color:var(--success);background:#eefbf2;
-  padding:6px 9px;border-radius:999px;white-space:nowrap
-}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--success);background:#eefbf2;padding:6px 9px;border-radius:999px;white-space:nowrap}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 0 4px rgba(22,163,74,.10)}
 .info-row{display:flex;gap:12px;align-items:flex-start}
-.icon{
-  flex:0 0 42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-  background:#f2f3ff;font-size:20px
-}
-.info-body{min-width:0;flex:1}
-.info-title{font-weight:800;margin-bottom:5px}
-.info-text{color:var(--muted);font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.icon{flex:0 0 42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:#f2f3ff;font-size:20px}
+.info-body{min-width:0;flex:1}.info-title{font-weight:800;margin:0 0 5px;font-size:16px}.info-text{color:var(--muted);font-size:14px;line-height:1.7;overflow-wrap:anywhere}
 .info-link{display:inline-block;margin-top:7px;color:var(--primary);text-decoration:none;font-weight:700}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.action{
-  text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:14px;
-  padding:12px 14px;display:flex;align-items:center;gap:10px;min-height:54px
-}
-.action strong{display:block;font-size:14px}
-.action span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
-.tips{display:grid;gap:11px}
-.tip{
-  display:flex;gap:12px;align-items:flex-start;padding:12px 13px;border-radius:14px;background:#f8f9fb
-}
-.tip-num{
-  flex:0 0 28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;
-  background:#eceeff;color:var(--primary);font-weight:800;font-size:12px
-}
+.action{text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:10px;min-height:54px}
+.action strong{display:block;font-size:14px}.action span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.tips{display:grid;gap:11px}.tip{display:flex;gap:12px;align-items:flex-start;padding:12px 13px;border-radius:14px;background:#f8f9fb}
+.tip-num{flex:0 0 30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eceeff;color:var(--primary);font-weight:800;font-size:12px}
 .tip p{margin:1px 0 0;color:#5f6677;font-size:14px;line-height:1.7}
+.seo-copy{color:#697082;font-size:14px;line-height:1.8;margin:0}
 .footer{text-align:center;color:#9aa1af;font-size:12px;margin-top:20px}
+
+/* 仅 bzfby.html 使用的安装弹窗 */
+.install-pop{
+  position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,calc(env(safe-area-inset-bottom) + 14px));
+  width:min(370px,calc(100vw - 28px));z-index:1000;background:rgba(255,255,255,.985);
+  border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 20px 60px rgba(18,25,45,.20);
+  padding:16px;transform:translateY(18px);opacity:0;pointer-events:none;transition:.25s ease
+}
+.install-pop.show{transform:translateY(0);opacity:1;pointer-events:auto}
+.pop-top{display:flex;align-items:flex-start;gap:12px}
+.pop-icon{width:42px;height:42px;flex:0 0 42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#5b5cf0,#7c3aed);color:white;font-size:21px}
+.pop-title{font-weight:800;font-size:15px}.pop-desc{font-size:13px;color:#737b8b;line-height:1.55;margin-top:4px}
+.pop-close{margin-left:auto;border:0;background:#f2f3f6;color:#737b8b;width:30px;height:30px;border-radius:9px;cursor:pointer;font-size:18px;line-height:1}
+.pop-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}
+.pop-btn{border:0;border-radius:11px;min-height:42px;padding:9px 12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:13px}
+.pop-btn.primary{background:#262d4a;color:#fff}.pop-btn.light{background:#f2f3f7;color:#343b50}
+.pop-help{font-size:12px;color:#8b91a0;margin-top:9px;line-height:1.55;display:none}
+
 @media(max-width:680px){
-  .shell{width:min(100% - 18px,820px)}
-  .hero{border-radius:22px;padding:24px 18px}
-  .grid{grid-template-columns:1fr;gap:12px}
-  .card.full{grid-column:auto}
-  .actions{grid-template-columns:1fr}
-  .cta-row{display:grid;grid-template-columns:1fr}
-  .cta{width:100%}
-  .brand-row{align-items:flex-start}
+  .shell{width:min(100% - 18px,820px)}.hero{border-radius:22px;padding:24px 18px}
+  .grid{grid-template-columns:1fr;gap:12px}.card.full{grid-column:auto}
+  .actions{grid-template-columns:1fr}.cta-row{display:grid;grid-template-columns:1fr}.cta{width:100%}
+  .badge{margin-top:2px}
+  .install-pop{left:9px;right:9px;bottom:max(9px,calc(env(safe-area-inset-bottom) + 9px));width:auto}
 }
-@media(min-width:768px) and (max-width:1180px){
-  .shell{width:min(100% - 42px,860px)}
-}
+@media(min-width:768px) and (max-width:1180px){.shell{width:min(100% - 42px,860px)}}
 </style>
 </head>
 <body>
 <main class="shell">
-<section class="hero">
-  <div class="brand-row"><div class="brand">最新地址保存页</div><div class="badge">建议收藏</div></div>
-  <div class="subtitle">可以把本页面保存到本地，或加入浏览器书签 / 主屏幕，方便后续访问。</div>
-</section>
+
+<header class="hero">
+  <div class="brand-row">
+    <h1 class="brand" style="margin:0">保存第一版主小说最新地址</h1>
+    <div class="badge">本地备用</div>
+  </div>
+  <p class="subtitle">把最新地址保存到本地、添加书签或安装到桌面，方便以后快速打开。</p>
+  <div class="cta-row">
+    <a class="cta" href="./">← 返回发布页</a>
+  </div>
+</header>
 
 <section class="grid">
   <article class="card">
-    <div class="section-head"><div class="section-title">最新地址</div></div>
+    <div class="section-head"><h2 class="section-title">最新地址</h2></div>
     <div class="route-list">
-      <a class="route" href="https://bzfb.cc/" target="_blank"><div class="route-no">01</div><div class="route-main"><div class="route-domain">bzfb.cc</div></div><div class="route-arrow">›</div></a>
-      <a class="route" href="https://bzfby.net/" target="_blank"><div class="route-no">02</div><div class="route-main"><div class="route-domain">bzfby.net</div></div><div class="route-arrow">›</div></a>
-      <a class="route" href="https://dybzfb.cc/" target="_blank"><div class="route-no">03</div><div class="route-main"><div class="route-domain">dybzfb.cc</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://bzfb.cc/" target="_blank" rel="noopener"><div class="route-no">01</div><div class="route-main"><div class="route-domain">bzfb.cc</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://bzfby.net/" target="_blank" rel="noopener"><div class="route-no">02</div><div class="route-main"><div class="route-domain">bzfby.net</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://dybzfb.cc/" target="_blank" rel="noopener"><div class="route-no">03</div><div class="route-main"><div class="route-domain">dybzfb.cc</div></div><div class="route-arrow">›</div></a>
     </div>
   </article>
 
   <article class="card">
-    <div class="section-head"><div class="section-title">备用入口</div></div>
+    <div class="section-head"><h2 class="section-title">备用入口</h2></div>
     <div class="route-list">
-      <a class="route" href="https://ltxsdz.cc/" target="_blank"><div class="route-no">A</div><div class="route-main"><div class="route-domain">ltxsdz.cc</div></div><div class="route-arrow">›</div></a>
-      <a class="route" href="https://ltxsfb.cc/" target="_blank"><div class="route-no">B</div><div class="route-main"><div class="route-domain">ltxsfb.cc</div></div><div class="route-arrow">›</div></a>
-      <a class="route" href="https://d1bz.net/" target="_blank"><div class="route-no">C</div><div class="route-main"><div class="route-domain">d1bz.net</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://ltxsdz.cc/" target="_blank" rel="noopener"><div class="route-no">A</div><div class="route-main"><div class="route-domain">ltxsdz.cc</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://ltxsfb.cc/" target="_blank" rel="noopener"><div class="route-no">B</div><div class="route-main"><div class="route-domain">ltxsfb.cc</div></div><div class="route-arrow">›</div></a>
+      <a class="route" href="https://d1bz.net/" target="_blank" rel="noopener"><div class="route-no">C</div><div class="route-main"><div class="route-domain">d1bz.net</div></div><div class="route-arrow">›</div></a>
     </div>
   </article>
 
   <article class="card full">
-    <div class="section-head"><div class="section-title">保存方法</div></div>
+    <div class="section-head"><h2 class="section-title">保存 / 安装方法</h2></div>
     <div class="tips">
       <div class="tip"><div class="tip-num">PC</div><p>Windows / Linux：Ctrl + S 保存网页，Ctrl + D 添加书签。</p></div>
       <div class="tip"><div class="tip-num">Mac</div><p>macOS：Command + S 保存网页，Command + D 添加书签。</p></div>
-      <div class="tip"><div class="tip-num">iOS</div><p>iPhone / iPad Safari：点击分享按钮，选择“加入主画面”或“加入书签”。</p></div>
-      <div class="tip"><div class="tip-num">AND</div><p>Android：浏览器菜单中选择“加入主画面”或“添加书签”。</p></div>
+      <div class="tip"><div class="tip-num">iOS</div><p>iPhone / iPad Safari：点击分享按钮，选择“添加到主屏幕”或“添加书签”。</p></div>
+      <div class="tip"><div class="tip-num">AND</div><p>Android / Chrome：支持时可以直接“安装到桌面”，也可从浏览器菜单添加到主屏幕。</p></div>
     </div>
   </article>
 
@@ -182,13 +156,101 @@ a{color:inherit}
     <div class="info-row">
       <div class="icon">✉️</div>
       <div class="info-body">
-        <div class="info-title">发布邮箱</div>
-        <div class="info-text">发送任意邮件获取最新地址。</div>
-        <a class="info-link" href="mailto:ltxsba@gmail.com">ltxsba@gmail.com</a>
+        <h2 class="info-title">发布邮箱</h2>
+        <div class="info-text">发送任意邮件可自动获取最新地址。</div>
+        <a class="info-link" href="mailto:ltxsba@gmail.com">Ltxsba@gmail.com</a>
       </div>
     </div>
   </article>
 </section>
 </main>
+
+<aside class="install-pop" id="installPop" aria-live="polite" aria-label="安装或保存本页面">
+  <div class="pop-top">
+    <div class="pop-icon">↗</div>
+    <div>
+      <div class="pop-title">保存最新地址</div>
+      <div class="pop-desc" id="popDesc">可以安装到桌面，或把本页面保存到本地。</div>
+    </div>
+    <button class="pop-close" id="popClose" aria-label="关闭">×</button>
+  </div>
+  <div class="pop-actions">
+    <button class="pop-btn primary" id="installBtn" type="button">安装到桌面</button>
+    <a class="pop-btn light" href="bzfby.html" download="bzfby.html">保存页面</a>
+  </div>
+  <div class="pop-help" id="popHelp"></div>
+</aside>
+
+<script>
+let deferredInstallPrompt = null;
+
+const pop = document.getElementById("installPop");
+const installBtn = document.getElementById("installBtn");
+const closeBtn = document.getElementById("popClose");
+const help = document.getElementById("popHelp");
+const desc = document.getElementById("popDesc");
+
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone =
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.navigator.standalone === true;
+
+function showPopup(){
+  if (isStandalone) return;
+  const closedUntil = Number(localStorage.getItem("bzfbyPopupClosedUntil") || 0);
+  if (Date.now() < closedUntil) return;
+
+  if (isIOS) {
+    installBtn.textContent = "添加到主屏幕";
+    desc.textContent = "iPhone / iPad 请使用 Safari 分享菜单添加到主屏幕。";
+  }
+
+  pop.classList.add("show");
+}
+
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  installBtn.textContent = "安装到桌面";
+});
+
+installBtn.addEventListener("click", async () => {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+    try { await deferredInstallPrompt.userChoice; } catch(e) {}
+    deferredInstallPrompt = null;
+    return;
+  }
+
+  help.style.display = "block";
+
+  if (isIOS) {
+    help.textContent = "Safari：点击分享按钮 → 选择“添加到主屏幕”。";
+  } else {
+    help.textContent = "当前浏览器未提供直接安装按钮。请使用浏览器菜单中的“安装应用 / 添加到主屏幕”，或点击“保存页面”。";
+  }
+});
+
+closeBtn.addEventListener("click", () => {
+  pop.classList.remove("show");
+  localStorage.setItem(
+    "bzfbyPopupClosedUntil",
+    String(Date.now() + 7 * 24 * 60 * 60 * 1000)
+  );
+});
+
+window.addEventListener("appinstalled", () => {
+  pop.classList.remove("show");
+  deferredInstallPrompt = null;
+});
+
+setTimeout(showPopup, 900);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
 </body>
 </html>
